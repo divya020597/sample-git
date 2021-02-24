@@ -2,6 +2,8 @@ package org.demo;
 
 import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -40,5 +42,23 @@ public static WebDriver driver;
 			}	
 
 		}
+	}
+	public static void jsclick(WebElement c) {
+		 JavascriptExecutor js =(JavascriptExecutor)driver;
+    js.executeScript("argument[0].click()",c);
+	}
+	//41
+	public static String jsgetattribute(WebElement a) {
+		 JavascriptExecutor js =(JavascriptExecutor)driver;
+		 String tt =(String)js.executeScript("argument[0].getAttribute('value')",a);
+		 return tt;
+		//Simplified method
+		 //return (String)js.executeScript("argument[0].getAttribute('value')",a);
+	}
+	public static Object scrolldwnandup( String xpath) {
+		 JavascriptExecutor js =(JavascriptExecutor)driver;
+		 WebElement xp = driver.findElement(By.xpath(""+xpath+""));
+	    return js.executeScript("arguments[0].scrollIntoView(true)",xp);
+
 	}
 }
