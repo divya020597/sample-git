@@ -48,9 +48,9 @@ public static WebDriver driver;
     js.executeScript("argument[0].click()",c);
 	}
 	//41
-	public static String jsgetattribute(WebElement a) {
+	public static String jsgetattribute(WebElement b) {
 		 JavascriptExecutor js =(JavascriptExecutor)driver;
-		 String tt =(String)js.executeScript("argument[0].getAttribute('value')",a);
+		 String tt =(String)js.executeScript("argument[0].getAttribute('value')",b);
 		 return tt;
 		//Simplified method
 		 //return (String)js.executeScript("argument[0].getAttribute('value')",a);
@@ -62,3 +62,4 @@ public static WebDriver driver;
 
 	}
 }
+
